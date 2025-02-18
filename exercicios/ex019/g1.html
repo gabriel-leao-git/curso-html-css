@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GloboNews - Canal de Notícias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>GLOBONEWS</h1>
+    </header>
+    <main>
+        <div id="news-container">
+            <!-- News articles will be loaded here dynamically -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Site de Notícias</p>
+    </footer>
+
+    <script>
+        // Fetch and display news articles dynamically
+        fetch('/api/news')
+            .then(response => response.json())
+            .then(news => {
+                const container = document.getElementById('news-container');
+                news.forEach(article => {
+                    const articleDiv = document.createElement('div');
+                    articleDiv.className = 'news-article';
+                    articleDiv.innerHTML = `
+                        <img src="${article.image}" alt="${article.title}">
+                        <h2>${article.title}</h2>
+                        <p>${article.description}</p>
+                        <span>${article.date}</span>
+                    `;
+                    container.appendChild(articleDiv);
+                });
+            });
+    </script>
+</body>
+</html>

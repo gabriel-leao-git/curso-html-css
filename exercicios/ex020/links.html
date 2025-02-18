@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a{
+            color: red;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: rgb(226, 43, 144);
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: forestgreen;
+        }
+
+        a:active {
+            color: rgb(226, 80, 43);
+        }
+
+        .especial{
+            background-color: black;
+            color: white;
+        }
+        .epecial::before {
+            content: '>';
+        }
+        .especial::after {
+            content: '[link]';
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personalizando Links</h1>
+    <ul>
+        <li><a href="https://github.com/gabriel-leao-git" target="_blank" rel="external">Repositório GitHub</a></li>
+        <li><a href="https://www.youtube.com/@Leao_Estetica_Automotiva" target="_blank" rel="external" class="especial">Canal do Youtube</a></li>
+        <li><a href="https://www.instagram.com/gabbriel_leao/" target="_blank" rel="external">Meu Instagram</a></li>
+    </ul>
+</body>
+</html>
